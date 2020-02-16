@@ -15,6 +15,18 @@ There are two things you can do about this warning:
   )
 (package-initialize)
 
+;; Auto-install packages so I can share this init.el around between machines easily
+;; From https://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name
+(setq package-list '(expand-region multiple-cursors neotree auto-package-update monokai-theme))
+; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
 ;; Fix some kind of mac os keyboard issue?
 (set-keyboard-coding-system nil)
 
