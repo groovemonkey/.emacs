@@ -5,5 +5,7 @@ elpa/
 eshell/
 ido.last
 ido.last~
-session.10bd10e3cffae3c093155347782547492700000058880068
-
+session.*
+.cache/
+init.el~
+projectile-bookmarks.eld
